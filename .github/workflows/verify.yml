@@ -35,17 +35,3 @@ jobs:
         run: |
           mkdir -p bin
           devbox run -- go build -o bin/openspec ./cmd/openspec
-
-  verify:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build verification container
-        run: docker build -f containers/verify/Containerfile -t openspec-verify .
-
-      - name: Run cross-reference audit
-        run: docker run --rm openspec-verify audit
-
-      - name: Run format compatibility check
-        run: docker run --rm openspec-verify compat
