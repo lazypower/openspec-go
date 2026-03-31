@@ -22,7 +22,7 @@ This is a scratch-an-itch project. The upstream TypeScript CLI works fine. This 
 ## Install
 
 ```sh
-go install github.com/chuck/openspec-go/cmd/openspec@latest
+go install github.com/lazypower/openspec-go/cmd/openspec@latest
 ```
 
 Or build from source:
