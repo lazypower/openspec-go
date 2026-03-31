@@ -9,7 +9,7 @@ set -eu
 # 3. Every requirement in specs has at least one test in the matrix
 
 REPO_ROOT="${REPO_ROOT:-.}"
-SPEC_FILE="${REPO_ROOT}/openspec/changes/rewrite-openspec-in-go/specs/testing/spec.md"
+SPEC_FILE="${REPO_ROOT}/openspec/specs/testing/spec.md"
 INTERNAL="${REPO_ROOT}/internal"
 
 RED='\033[0;31m'
@@ -75,7 +75,7 @@ echo ""
 # --- 5. Check: every requirement in specs has at least one test ---
 echo "=== Check: spec requirements have test coverage ==="
 # Extract requirements from all spec files (not testing spec itself)
-SPEC_DIR="${REPO_ROOT}/openspec/changes/rewrite-openspec-in-go/specs"
+SPEC_DIR="${REPO_ROOT}/openspec/specs"
 REQ_TMPFILE=$(mktemp)
 for spec in "${SPEC_DIR}"/*/spec.md; do
     specname=$(basename "$(dirname "$spec")")
