@@ -9,8 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jetify-com/devbox-install-action@v0.12.0
+      - uses: actions/checkout@v5
+      - uses: jetify-com/devbox-install-action@v0.15.0
       - name: Run tests
         run: devbox run -- go test ./... -count=1 -race
       - name: Run coverage
@@ -21,16 +21,16 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jetify-com/devbox-install-action@v0.12.0
+      - uses: actions/checkout@v5
+      - uses: jetify-com/devbox-install-action@v0.15.0
       - name: Vet
         run: devbox run -- go vet ./...
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jetify-com/devbox-install-action@v0.12.0
+      - uses: actions/checkout@v5
+      - uses: jetify-com/devbox-install-action@v0.15.0
       - name: Build binary
         run: |
           mkdir -p bin
